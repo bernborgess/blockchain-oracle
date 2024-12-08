@@ -11,20 +11,12 @@ gnome-terminal -- bash -c "
 
 # Second window - on-chain-oracle setup
 gnome-terminal -- bash -c "
-  cd ./on-chain-oracle;
-  cp .env.example .env;
-  yarn install;
-  truffle compile;
-  truffle migrate;
+  ./run_on_chain.sh
   exec bash
 "
 
 # Third window - off-chain-oracle setup
 gnome-terminal -- bash -c "
-  cd ./off-chain-oracle;
-  cp .env.example .env;
-  yarn install;
-  sleep 10;
-  yarn run develop;
+  ./run_off_chain.sh
   exec bash
 "
